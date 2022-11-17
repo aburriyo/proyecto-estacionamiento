@@ -17,14 +17,20 @@ class MyForm(FlaskForm):
     name = StringField('name', validators=[DataRequired()])
     patente = StringField('name', validators=[DataRequired()])
 
-@app.route('/')
-def login():
-    if request.method == 'POST':
-        return render_template('auth/login.html')
-    else:
-        return render_template('auth/login.html')
+# @app.route('/')
+# def login():
+#     if request.method == 'POST':
+#         return render_template('auth/login.html')
+#     else:
+#         return render_template('auth/login.html')
 
+@app.route("/base")
+def base():
+    return render_template('base.html')
 
+@app.route("/index01")
+def index01():
+    return render_template('index01.html')
 
 @app.route("/main")
 def main():    
